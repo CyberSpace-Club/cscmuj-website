@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import insta from "@/assets/insta.png";
 import LinkedIn from "@/assets/linkedin.png";
-import Hamburger from "@/app/components/Hamburger.jsx";
+import Hamburger from "./Hamburger";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

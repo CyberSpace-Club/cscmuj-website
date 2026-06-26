@@ -5,6 +5,7 @@ import Image from "next/image";
 import insta from "@/assets/insta.png";
 import LinkedIn from "@/assets/linkedin.png";
 
+
 const Hamburger = ({ isOpen, toggleMenu }) => {
   const menuVariants = {
     open: {
