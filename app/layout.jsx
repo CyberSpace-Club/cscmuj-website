@@ -2,6 +2,7 @@ import Footer from "./components/Footer";
 import Nav from "./components/Nav";
 import "./globals.css";
 import { Montserrat } from "next/font/google";
+import SiteShell from "./components/SiteShell";
 
 const MontserratFont = Montserrat({
   display: "swap",
@@ -23,9 +24,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="bg-[#000000]">
         <main className={MontserratFont.className}>
-          <Nav />
-          {children}
-          <Footer />
+          <SiteShell>{children}</SiteShell>
         </main>
       </body>
     </html>

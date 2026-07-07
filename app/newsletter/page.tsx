@@ -3,29 +3,30 @@
 import { useState, useEffect } from "react";
 import { Send, Code, Terminal, Cpu, Database, ChevronDown } from "lucide-react";
 import { supabase } from "@/lib/supabase";
+
 type SubmitState = "idle" | "loading" | "success" | "error";
 
 export default function Newsletter() {
-  const [email, setEmail] = useState("");
+  const [email, setEmail]         = useState("");
   const [isVisible, setIsVisible] = useState(false);
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
-  const [errorMsg, setErrorMsg] = useState("");
+  const [errorMsg, setErrorMsg]   = useState("");
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmitState("loading");
     setErrorMsg("");
+
     const { error } = await supabase
       .from("newsletters_subscribers")
       .insert([{ email, subscribed_at: new Date().toISOString() }]);
-    if (error) 
-     {
-      // Unique violation = already subscribed
-      if (error.code === "23505") 
-      {
+
+    if (error) {
+      if (error.code === "23505") {
         setErrorMsg("You're already subscribed!");
       } else {
         setErrorMsg("Something went wrong. Please try again.");
@@ -36,20 +37,31 @@ export default function Newsletter() {
       setEmail("");
     }
   };
+
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
+
       {/* Animated Background */}
       <div className="fixed inset-0 opacity-30">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-orange-500/20 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute top-40 right-20 w-40 h-40 bg-orange-600/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "-2s" }}></div>
-        <div className="absolute bottom-20 left-1/4 w-48 h-48 bg-orange-500/15 rounded-full blur-3xl animate-float" style={{ animationDelay: "-4s" }}></div>
+        <div
+          className="absolute top-10 left-10 w-32 h-32 bg-orange-500/20 rounded-full blur-3xl animate-float"
+        />
+        <div
+          className="absolute top-40 right-20 w-40 h-40 bg-orange-600/10 rounded-full blur-3xl animate-float"
+          style={{ animationDelay: "-2s" }}
+        />
+        <div
+          className="absolute bottom-20 left-1/4 w-48 h-48 bg-orange-500/15 rounded-full blur-3xl animate-float"
+          style={{ animationDelay: "-4s" }}
+        />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
         <div className="text-center">
+
           {/* Hero Icon */}
           <div className="relative inline-block animate-float">
-            <div className="absolute inset-0 bg-orange-500/20 rounded-full blur-xl"></div>
+            <div className="absolute inset-0 bg-orange-500/20 rounded-full blur-xl" />
             <Code className="w-16 h-16 text-orange-500 mx-auto mb-6 relative z-10 animate-pulse-slow" />
           </div>
 
@@ -61,24 +73,38 @@ export default function Newsletter() {
           </div>
 
           {/* Title */}
-          <h1 className={`text-6xl md:text-7xl font-bold mb-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+          <h1
+            className={`text-6xl md:text-7xl font-bold mb-6 transition-all duration-700 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
+          >
             Dive Into
             <span className="text-orange-500 relative mx-2">
               <span className="relative z-10">Tech</span>
-              <span className="absolute inset-x-0 bottom-0 h-3 bg-orange-500/20 transform -skew-x-12"></span>
+              <span className="absolute inset-x-0 bottom-0 h-3 bg-orange-500/20 transform -skew-x-12" />
             </span>
             <br />
-            <span className="text-4xl md:text-5xl text-gray-300">with Cyberspace Club</span>
+            <span className="text-4xl md:text-5xl text-gray-300">
+              with Cyberspace Club
+            </span>
           </h1>
 
           {/* Subtitle */}
-          <p className={`text-xl text-gray-300 max-w-2xl mx-auto mb-10 transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+          <p
+            className={`text-xl text-gray-300 max-w-2xl mx-auto mb-10 transition-all duration-700 delay-200 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
+          >
             Unlock the world of coding excellence with our weekly tech insights,
             hands-on tutorials, and exclusive developer resources.
           </p>
 
           {/* Form */}
-          <div className={`max-w-md mx-auto transition-all duration-700 delay-400 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+          <div
+            className={`max-w-md mx-auto transition-all duration-700 delay-400 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
+          >
             {submitState === "success" ? (
               <div className="px-6 py-4 bg-green-500/20 border border-green-500/40 rounded-lg text-green-300 font-semibold text-lg">
                 🎉 You&apos;re on the list! We&apos;ll be in touch soon.
@@ -126,29 +152,34 @@ export default function Newsletter() {
             {
               icon: Terminal,
               title: "Code Mastery Series",
-              description: "Weekly deep dives into advanced programming concepts, algorithms, and coding best practices.",
+              description:
+                "Weekly deep dives into advanced programming concepts, algorithms, and coding best practices.",
               delay: 0,
             },
             {
               icon: Cpu,
               title: "Tech Stack Spotlight",
-              description: "Explore cutting-edge frameworks, tools, and technologies shaping the future of development.",
+              description:
+                "Explore cutting-edge frameworks, tools, and technologies shaping the future of development.",
               delay: 200,
             },
             {
               icon: Database,
               title: "Developer Resources",
-              description: "Exclusive access to code snippets, boilerplates, and optimization techniques.",
+              description:
+                "Exclusive access to code snippets, boilerplates, and optimization techniques.",
               delay: 400,
             },
           ].map((feature, index) => (
             <div
               key={index}
-              className={`group bg-white/5 backdrop-blur-lg p-8 rounded-xl border border-white/10 hover:border-orange-500/50 transition-all duration-500 hover:-translate-y-1 hover:shadow-lg hover:shadow-orange-500/10 ${isVisible ? "animate-slide-in" : "opacity-0"}`}
+              className={`group bg-white/5 backdrop-blur-lg p-8 rounded-xl border border-white/10 hover:border-orange-500/50 transition-all duration-500 hover:-translate-y-1 hover:shadow-lg hover:shadow-orange-500/10 ${
+                isVisible ? "animate-slide-in" : "opacity-0"
+              }`}
               style={{ animationDelay: `${feature.delay}ms` }}
             >
               <div className="relative">
-                <div className="absolute inset-0 bg-orange-500/20 rounded-full blur-xl transform group-hover:scale-110 transition-transform duration-500"></div>
+                <div className="absolute inset-0 bg-orange-500/20 rounded-full blur-xl transform group-hover:scale-110 transition-transform duration-500" />
                 <feature.icon className="w-10 h-10 text-orange-500 mb-4 relative z-10 transform group-hover:scale-110 transition-transform duration-500" />
               </div>
               <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>

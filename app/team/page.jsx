@@ -22,7 +22,7 @@ import shiv from "@/assets/team/people/ecs/Shiv1.jpg";
 import stuti from "@/assets/team/people/ecs/Stuti1.jpeg";
 import harshit from "@/assets/team/people/ecs/harshit.jpg";
 import suyash from "@/assets/team/people/ecs/Suyash1.jpg";
-import amritansh from "@/assets/team/people/ecs/Amritansh.JPG";
+import amritansh from "@/assets/team/people/ecs/Amritansh.jpg";
 import avichal from "@/assets/team/people/ecs/AvichalKhanna.png";
 import soumyadeepa from "@/assets/team/people/ecs/Soumyadeepa1.jpg";
 
@@ -49,7 +49,7 @@ import vaibhav from "@/assets/team/people/heads/vaibhav.jpeg";
 
 //Joint Heads
 import vedant from "@/assets/team/people/joint/vedant.png";
-import harshitdubey from "@/assets/team/people/joint/harshitdubey.JPG";
+import harshitdubey from "@/assets/team/people/joint/harshitdubey.jpg";
 import snehal from "@/assets/team/people/joint/snehal.jpeg";
 import vidhi from "@/assets/team/people/joint/vidhi.jpg";
 import samyukta from "@/assets/team/people/joint/samyukta.jpg";
@@ -74,7 +74,7 @@ import yash from "@/assets/team/people/seniorCoordinators/yash.jpg";
 import priyansh from "@/assets/team/people/seniorCoordinators/priyansh.jpg";
 import pranav from "@/assets/team/people/seniorCoordinators/pranav.jpeg";
 import jiya from "@/assets/team/people/seniorCoordinators/jiya.jpg";
-import bhumi from "@/assets/team/people/seniorCoordinators/bhumi.JPG";
+import bhumi from "@/assets/team/people/seniorCoordinators/bhumi.jpg";
 import aditya from "@/assets/team/people/seniorCoordinators/aditya.jpg";
 import rudra from "@/assets/team/people/seniorCoordinators/rudra.jpeg";
 import faisal from "@/assets/team/people/seniorCoordinators/faisal.jpg";
