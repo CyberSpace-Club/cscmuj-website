@@ -22,7 +22,7 @@ import ambika from "@/assets/team/people/ecs/vicepresi.jpg";
 import stuti from "@/assets/team/people/ecs/Stuti1.jpeg";
 import harshit from "@/assets/team/people/ecs/harshit.jpg";
 import suyash from "@/assets/team/people/ecs/Suyash1.jpg";
-import amritansh from "@/assets/team/people/ecs/Amritansh.JPG";
+import amritansh from "@/assets/team/people/ecs/Amritansh.jpg";
 import arindam1 from "@/assets/team/people/ecs/arindam1.png";
 import soumyadeepa from "@/assets/team/people/ecs/Soumyadeepa1.jpg";
 
@@ -45,7 +45,7 @@ import ananye from "@/assets/team/people/heads/ananye1.jpg";
 import sidharth from "@/assets/team/people/heads/sidharth.jpg";
 
 // Joint Heads
-import harshitdubey from "@/assets/team/people/joint/harshitdubey.JPG";
+import harshitdubey from "@/assets/team/people/joint/harshitdubey.jpg";
 import snehal from "@/assets/team/people/joint/snehal.jpeg";
 import samyukta from "@/assets/team/people/joint/samyukta.jpg";
 import ojash from "@/assets/team/people/joint/ojash.jpeg";
