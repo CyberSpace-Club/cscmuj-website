@@ -115,7 +115,7 @@ const Footer = () => {
                     href="tel:9876543211"
                     className="hover:text-[#ff8000] transition-colors text-sm font-medium"
                   >
-                    +91 9555 672750
+                    +91 95556 72750
                   </a>
                 </div>
                 <div className="text-xs opacity-80 pl-6">
